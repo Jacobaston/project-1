@@ -12,8 +12,30 @@ body {
   background-color: black;
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(white, #2121DE);
+  width: 600px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+aside {
+  display: flex;
+  align-self: flex-start;
+  margin-left: 35.29px;
+}
+
 img {
-  margin: 30px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  width: 510px;
 }
 
 .grid {
@@ -22,6 +44,12 @@ img {
   width: 600px;
   height: 600px;
   flex-wrap: wrap;
+}
+
+h4 {
+  color: white;
+  margin: 0;
+  margin-right: 15px;
 }
 
 .cell {
@@ -33,7 +61,7 @@ img {
 }
 
 .wall {
-  background-color: aqua;
+  background-color: #2121DE;
   font-size: 8px;
   color: transparent;
 }

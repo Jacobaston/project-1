@@ -8,7 +8,6 @@ let ghost1 = 125
 let ghost2 = 126
 let ghost3 = 127
 let ghost4 = 143
-let points = 0
 
 // Create grid
 for (let index = 0; index < width ** 2; index++) {
@@ -114,7 +113,6 @@ function removeFood() {
     if (pacMan === food[i]) {
       block[food[i]].classList.remove('food')
       block[food[i]].innerHTML = ''
-      block[i].classList.remove('coin')
     }
   }
 }
