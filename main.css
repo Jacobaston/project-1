@@ -50,6 +50,8 @@ h4 {
   color: white;
   margin: 0;
   margin-right: 15px;
+  font-family: 'VT323';
+  font-size: 20px;
 }
 
 .cell {
@@ -94,13 +96,8 @@ h4 {
   transform: rotate(180deg);
 }
 
-.ghost-1 {
+.ghost {
   background-image: url('https://i.gifer.com/YMXv.gif');
-  background-size: contain;
-}
-
-.ghost-2 {
-  background-image: url('https://i.gifer.com/5IPe.gif');
   background-size: contain;
 }
 
