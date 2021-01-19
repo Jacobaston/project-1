@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+header {
+  display: flex;
+  margin-top: 100px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 2800px;
+  margin-right: 0;
+}
+
+.images {
+  display: flex;
+  flex-direction: column;
+  margin: 80px 0;
+}
+
+aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+img {
+  width: 200px;
+  margin-right: 200px;
+}
+
+h3 {
+  white-space: nowrap;
+  overflow: hidden;    
+  font-family: 'VT323';  
+  font-size: 150px;
+  margin: 20px;
+}
+
+.pacman h3 {
+  color: yellow;
+  animation: animated-text 1s steps(30,end) 0.5s 1 normal both
+}
+
+.pinky h3 {
+  color: pink;
+}
+
+.inky h3 {
+  color: aquamarine;
+  animation: animated-text 1s steps(30,end) 0.5s 1 normal both
+}
+
+.clyde h3 {
+  color: lightsalmon;
+}
+
+.blinky h3 {
+  color: red;
+  animation: animated-text 1s steps(30,end) 0.5s 1 normal both
+}
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 480px;}
+}
+
+.play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  font-size: 400px;
+  font-family: 'VT323';
+  color: grey;
+  text-decoration: none;
+}

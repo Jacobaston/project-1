@@ -68,6 +68,21 @@ h4 {
   color: transparent;
 }
 
+.wall-flash {
+  background-color: #2121DE;
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+@keyframes example {
+  0%   {background-color: 2121DE;}
+  25%  {background-color: aqua;}
+  50%  {background-color: 2121DE;}
+  75% {background-color: aqua;}
+  100% {background-color: 2121DE;}
+  
+}
+
 .food {
   font-size: 12px;
   color: transparent;
@@ -76,32 +91,53 @@ h4 {
   padding-top: 11px;
 }
 
+.coin {
+  background-image: url('././photos/coin.gif');
+  background-size: contain;
+  transform: rotate(0deg)
+}
+
 .pacmanRight {
-  background-image: url('https://i.gifer.com/XOsf.gif');
+  background-image: url('././photos/pacman.gif');
   background-size: contain;
 }
 .pacmanUp {
-  background-image: url('https://i.gifer.com/XOsf.gif');
+  background-image: url('././photos/pacman.gif');
   background-size: contain;
   transform: rotate(270deg);
 }
 .pacmanDown {
-  background-image: url('https://i.gifer.com/XOsf.gif');
+  background-image: url('././photos/pacman.gif');
   background-size: contain;
   transform: rotate(90deg);
 }
 .pacmanLeft {
-  background-image: url('https://i.gifer.com/XOsf.gif');
+  background-image: url('././photos/pacman.gif');
   background-size: contain;
   transform: rotate(180deg);
 }
 
-.ghost {
-  background-image: url('https://i.gifer.com/YMXv.gif');
+.ghost-1 {
+  background-image: url("././photos/pinky.png");
   background-size: contain;
+  transform: rotate(0deg)
 }
 
-.coin {
-  background-image: url('https://i.gifer.com/ZXv0.gif');
+.ghost-2 {
+  background-image: url("././photos/blinky.png");
   background-size: contain;
+  transform: rotate(0deg)
 }
+
+.ghost-3 {
+  background-image: url("././photos/clyde.png");
+  background-size: contain;
+  transform: rotate(0deg)
+}
+
+.ghost-4 {
+  background-image: url("././photos/inky.png");
+  background-size: contain;
+  transform: rotate(0deg)
+}
+
