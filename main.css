@@ -26,6 +26,12 @@ main {
   flex-direction: column;
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 aside {
   display: flex;
   align-self: flex-start;
@@ -54,6 +60,10 @@ h4 {
   font-size: 20px;
 }
 
+h3 {
+  color: white;
+}
+
 .cell {
   background-color: black;
   font-size: 8px;
@@ -68,33 +78,39 @@ h4 {
   color: transparent;
 }
 
-.wall-flash {
-  background-color: #2121DE;
-  animation-name: example;
-  animation-duration: 4s;
-}
-
-@keyframes example {
-  0%   {background-color: 2121DE;}
-  25%  {background-color: aqua;}
-  50%  {background-color: 2121DE;}
-  75% {background-color: aqua;}
-  100% {background-color: 2121DE;}
-  
-}
-
 .food {
-  font-size: 12px;
+  font-size: 8px;
   color: transparent;
-  color: white;
-  text-align: center;
-  padding-top: 11px;
+  padding-top: 5px;
+  background-image: url('././photos/dot3.jpg');
+  background-size: contain;
 }
 
 .coin {
   background-image: url('././photos/coin.gif');
   background-size: contain;
   transform: rotate(0deg)
+}
+
+.winner {
+  background-color: #2121DE;
+  animation-name: flash;
+  animation-duration: 6s;
+}
+
+@keyframes flash {
+  0%   {background-color: #2121DE;}
+  10%   {background-color: rgb(14, 216, 14);}
+  20%   {background-color: #2121DE;}
+  30%   {background-color: rgb(14, 216, 14);}
+  40%  {background-color: #2121DE;}
+  50%  {background-color: rgb(14, 216, 14);}
+  60% {background-color: #2121DE;}
+  70%   {background-color: rgb(14, 216, 14);}
+  80%   {background-color: #2121DE;}
+  90%   {background-color: rgb(14, 216, 14);}
+  100% {background-color: #2121DE;}
+  
 }
 
 .pacmanRight {
@@ -141,3 +157,11 @@ h4 {
   transform: rotate(0deg)
 }
 
+button {
+  font-size: 20px;
+  padding: 5px 15px;
+  background-color: red;
+  color: white;
+  border: none;
+
+}

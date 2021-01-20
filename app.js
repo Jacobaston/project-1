@@ -1,6 +1,8 @@
 const grid = document.querySelector('.grid')
 const points = document.querySelector('#points')
 const high = document.querySelector('#highScore')
+const lose = document.querySelector('.lose')
+const button = document.querySelector('button')
 
 const width = 17 // ! DO NOT TOUCH
 const cells = []
@@ -12,7 +14,6 @@ const ghost3 = 160
 const ghost4 = 162
 let score = 0
 let highScore = 0
-let ghostimerId = ''
 
 if (localStorage) {
   highScore = localStorage.getItem('highscore)') || 0
@@ -33,6 +34,8 @@ const walls = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 25,
 
 const food = [18, 19, 20, 21, 22, 23, 24, 26, 27, 28, 29, 30, 31, 32, 35, 38, 41, 43, 46, 49, 55, 58, 60, 63, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 86, 89, 92, 94, 97, 100, 103, 104, 105, 106, 109, 111, 114, 115, 116, 117, 123, 124, 125, 129, 130, 131, 140, 144, 148, 157, 158, 159, 163, 164, 165, 171, 172, 173, 174, 182, 183, 184, 185, 188, 191, 192, 193, 194, 196, 197, 198, 199, 202, 208, 216, 222, 223, 224, 225, 226, 227, 228, 230, 231, 232, 233, 234, 235, 236, 239, 259, 245, 247, 253, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270]
 
+const winner = [37, 39, 42, 45, 47, 54, 56, 58, 60, 62, 64, 72, 75, 77, 79, 81, 89, 92, 94, 96, 98, 106, 110, 113, 114, 115, 155, 159, 161, 163, 167, 172, 176, 178, 180, 181, 184, 189, 191, 193, 195, 197, 199, 201, 207, 209, 212, 214, 217, 218, 224, 226, 229, 231, 235]
+
 // Render walls
 for (let i = 0; i < walls.length; i++) {
   for (let j = 0; j < cells.length; j++) {
@@ -46,7 +49,6 @@ for (let i = 0; i < walls.length; i++) {
 for (let i = 0; i < food.length; i++) {
   for (let j = 0; j < cells.length; j++) {
     if (food[i] === Number(cells[j].innerHTML)) {
-      block[j].innerHTML = '•'
       block[j].classList.add('food')
     }
   }
@@ -59,15 +61,15 @@ for (let i = 0; i < cells.length; i++) {
   }
 }
 
-//////////-Above this line is just for grid-genoration////////////
-
 // Create Pac-man initial instance 
 cells[pacMan].classList.remove('pacmanRight')
 pacMan += 1
 cells[pacMan].classList.add('pacmanRight')
 
+//////////-Above this line is just for grid-genoration////////////
+
 // Movement of character
-document.addEventListener('keyup', (event) => {
+document.addEventListener('keydown', (event) => {
   const key = event.keyCode
 
   if ((key === 68 || key === 39) && !((pacMan + 1) % width === 0) && !(walls.includes(pacMan + 1))) {
@@ -108,7 +110,6 @@ function removeRecurrence() {
 function removeFood() {
   if (cells[pacMan].classList.contains('food')) {
     cells[pacMan].classList.remove('food')
-    cells[pacMan].innerHTML = ''
     score = score + 10
     highScore = highScore + 10
     points.innerHTML = score
@@ -121,7 +122,6 @@ function removeFood() {
 function special() {
   if (cells[pacMan].classList.contains('coin')) {
     cells[pacMan].classList.remove('coin')
-    cells[pacMan].innerHTML = ''
     score = score + 100
     highScore = highScore + 100
     points.innerHTML = score
@@ -174,12 +174,11 @@ function moveGhost(ghost, color) {
     } else direction = movement[Math.floor(Math.random() * movement.length)]
 
     if (cells[ghost].classList.contains('pacmanRight') || cells[ghost].classList.contains('pacmanLeft') || cells[ghost].classList.contains('pacmanUp') || cells[ghost].classList.contains('pacmanDown')) {
-      console.log(`Game Over! You scored ${points.innerHTML} points`)
+      lose.innerHTML = `Game Over! You scored ${points.innerHTML} points`
       clearIntervals()
     }
   }, 250)
 }
-
 
 moveGhost(ghost1, 'ghost-1')
 moveGhost(ghost2, 'ghost-2')
@@ -194,8 +193,37 @@ function clearIntervals() {
 }
 
 function checkForWinner() {
-  if (score >= 100) {
+  if (score >= 1630) {
     clearIntervals()
-    console.log('Winner')
+    removeRecurrence()
+
+    for (let i = 0; i < walls.length; i++) {
+      for (let j = 0; j < cells.length; j++) {
+        if (walls[i] === Number(cells[j].innerHTML)) {
+          block[j].classList.remove('wall')
+        }
+      }
+    }
+
+    for (let i = 0; i < winner.length; i++) {
+      for (let j = 0; j < cells.length; j++) {
+        if (winner[i] === Number(cells[j].innerHTML)) {
+          block[j].classList.add('winner')
+        } else {
+          block[j].classList.add('wall')
+        }
+      }
+    }
+
+    setTimeout(() => {
+      location.reload()
+    },6500)
   }
 }
+
+function reset() {
+  button.addEventListener('click', () => {
+    location.reload()
+  })
+}
+reset()
