@@ -4,6 +4,8 @@ const high = document.querySelector('#highScore')
 const lose = document.querySelector('.lose')
 const button = document.querySelector('button')
 
+console.log('hello')
+
 const width = 17 // ! DO NOT TOUCH
 const cells = []
 
@@ -176,6 +178,7 @@ function moveGhost(ghost, color) {
     if (cells[ghost].classList.contains('pacmanRight') || cells[ghost].classList.contains('pacmanLeft') || cells[ghost].classList.contains('pacmanUp') || cells[ghost].classList.contains('pacmanDown')) {
       lose.innerHTML = `Game Over! You scored ${points.innerHTML} points`
       clearIntervals()
+      removeRecurrence()
     }
   }, 250)
 }
@@ -217,7 +220,7 @@ function checkForWinner() {
 
     setTimeout(() => {
       location.reload()
-    },6500)
+    },6000)
   }
 }
 

@@ -5,32 +5,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">    
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <title>Pac-Man</title>
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="home.css">
 </head>
 
 <body>
   <header>
-    <section>
-      <img src="photos/logo.png">
-    </section>
-    <aside>
-      <h4>Points: <span id="points">0</span></h4>
-      <h4>High Score: <span id="highScore">0</span></h4>
-    </aside>
+    <img class="logo" src="photos/logo.png">
   </header>
-
   <main>
-    <section class="grid">
+    <section class="images">
+      <aside class="pacman">
+        <img src="photos/pacman.gif" alt="pacman">
+        <h3>Pac-Man</h3>
+      </aside>
+      <aside class="pinky">
+        <img src="photos/pinky.png" alt="pinky">
+        <h3>Pinky</h3>
+      </aside>
+      <aside class="inky">
+        <img src="photos/inky.png" alt="inky">
+        <h3>Inky</h3>
+      </aside>
+      <aside class="clyde">
+        <img src="photos/clyde.png" alt="clyde">
+        <h3>Clyde</h3>
+      </aside>
+      <aside class="blinky">
+        <img src="photos/blinky.png" alt="blinky">
+        <h3>Blinky</h3>
+      </aside>
+    </section>
+    <section class="play">
+      <a href="home.html">Play Now</a>
     </section>
   </main>
-
   <footer>
-    <h3 class ="lose"></h3>
-    <button>Reset</button>
+
   </footer>
-  <script src="app.js"></script>
 </body>
 
 </html>
