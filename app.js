@@ -4,7 +4,7 @@ const high = document.querySelector('#highScore')
 const lose = document.querySelector('.lose')
 const button = document.querySelector('button')
 
-console.log('hello')
+console.log('bye')
 
 const width = 17 // ! DO NOT TOUCH
 const cells = []
