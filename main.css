@@ -165,3 +165,36 @@ button {
   border: none;
   font-family: 'VT323';
 }
+
+@media screen and (max-width: 375px) {
+  .grid {
+    width: 360px;
+    height: 360px;
+  }
+
+  header {
+    width: 360px;
+  }
+
+  img {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 340px;
+  }
+
+  h4 {
+    color: white;
+    margin: 0;
+    margin-right: 15px;
+    font-family: 'VT323';
+    font-size: 15px;
+  }
+
+  aside {
+    margin-left: 21.17px;
+  }
+
+  button {
+    font-size: 15px;
+  }
+}
