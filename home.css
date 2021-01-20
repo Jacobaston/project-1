@@ -96,7 +96,7 @@ a {
   text-decoration: none;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 414px) {
   .logo {
     width: 360px;
     margin-right: 0;

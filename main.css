@@ -166,7 +166,7 @@ button {
   font-family: 'VT323';
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 414px) {
   .grid {
     width: 360px;
     height: 360px;
