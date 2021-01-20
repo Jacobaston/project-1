@@ -2,7 +2,11 @@ const grid = document.querySelector('.grid')
 const points = document.querySelector('#points')
 const high = document.querySelector('#highScore')
 const lose = document.querySelector('.lose')
-const button = document.querySelector('button')
+const button = document.querySelector('.reset')
+const up = document.querySelector('.up')
+const down = document.querySelector('.down')
+const left = document.querySelector('.left')
+const right = document.querySelector('.right')
 
 console.log('hello')
 
@@ -70,7 +74,7 @@ cells[pacMan].classList.add('pacmanRight')
 
 //////////-Above this line is just for grid-genoration////////////
 
-// Movement of character
+// Desktop event listeners
 document.addEventListener('keydown', (event) => {
   const key = event.keyCode
 
@@ -98,6 +102,47 @@ document.addEventListener('keydown', (event) => {
     removeRecurrence()
     pacMan -= width
     cells[pacMan].classList.add('pacmanUp')
+  }
+})
+
+// Mobile event listeners
+right.addEventListener('click', () => {
+  if (!((pacMan + 1) % width === 0) && !(walls.includes(pacMan + 1))) {
+    removeFood()
+    special()
+    removeRecurrence()
+    pacMan += 1
+    cells[pacMan].classList.add('pacmanRight')
+  }
+})
+
+up.addEventListener('click', () => {
+  if (!(pacMan < width) && !(walls.includes(pacMan - 17))) {
+    removeFood()
+    special()
+    removeRecurrence()
+    pacMan -= width
+    cells[pacMan].classList.add('pacmanUp')
+  }
+})
+
+down.addEventListener('click', () => {
+  if (!(pacMan + width >= width ** 2) && !(walls.includes(pacMan + 17))) {
+    removeFood()
+    special()
+    removeRecurrence()
+    pacMan += width
+    cells[pacMan].classList.add('pacmanDown')
+  }
+})
+
+left.addEventListener('click', () => {
+  if (!(pacMan % width === 0) && !(walls.includes(pacMan - 1))) {
+    removeFood()
+    special()
+    removeRecurrence()
+    pacMan -= 1
+    cells[pacMan].classList.add('pacmanLeft')
   }
 })
 
@@ -220,7 +265,7 @@ function checkForWinner() {
 
     setTimeout(() => {
       location.reload()
-    },6000)
+    }, 6000)
   }
 }
 
