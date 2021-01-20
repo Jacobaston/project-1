@@ -12,7 +12,7 @@ body {
 
 header {
   display: flex;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 main {
@@ -23,34 +23,34 @@ main {
 }
 
 .logo {
-  width: 2800px;
+  width: 700px;
   margin-right: 0;
 }
 
 .images {
   display: flex;
   flex-direction: column;
-  margin: 80px 0;
+  margin: 10px 0;
 }
 
 aside {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  margin: 5px;
 }
 
 img {
-  width: 200px;
-  margin-right: 200px;
+  width: 50px;
+  margin-right: 20px;
 }
 
 h3 {
   white-space: nowrap;
   overflow: hidden;    
   font-family: 'VT323';  
-  font-size: 150px;
-  margin: 20px;
+  font-size: 50px;
+  margin: 10px;
 }
 
 .pacman h3 {
@@ -78,17 +78,18 @@ h3 {
 
 @keyframes animated-text{
   from{width: 0;}
-  to{width: 480px;}
+  to{width: 200px;}
 }
 
 .play {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 35px;
 }
 
 a {
-  font-size: 400px;
+  font-size: 100px;
   font-family: 'VT323';
   color: grey;
   text-decoration: none;
