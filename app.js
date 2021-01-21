@@ -1,6 +1,5 @@
 const grid = document.querySelector('.grid')
 const points = document.querySelector('#points')
-const high = document.querySelector('#highScore')
 const lose = document.querySelector('.lose')
 const button = document.querySelector('.reset')
 const up = document.querySelector('.up')
@@ -19,11 +18,6 @@ const ghost2 = 128
 const ghost3 = 160
 const ghost4 = 162
 let score = 0
-let highScore = 0
-
-if (localStorage) {
-  highScore = localStorage.getItem('highscore)') || 0
-}
 
 // Create grid
 for (let index = 0; index < width ** 2; index++) {
@@ -74,8 +68,7 @@ cells[pacMan].classList.add('pacmanRight')
 
 //////////-Above this line is just for grid-genoration////////////
 
-// Desktop event listeners
-document.addEventListener('keydown', (event) => {
+function moveEvent(event) {
   const key = event.keyCode
 
   if ((key === 68 || key === 39) && !((pacMan + 1) % width === 0) && !(walls.includes(pacMan + 1))) {
@@ -103,10 +96,13 @@ document.addEventListener('keydown', (event) => {
     pacMan -= width
     cells[pacMan].classList.add('pacmanUp')
   }
-})
+}
+
+// Desktop event listeners
+document.addEventListener('keydown', moveEvent)
 
 // Mobile event listeners
-right.addEventListener('click', () => {
+function rightEvent() {
   if (!((pacMan + 1) % width === 0) && !(walls.includes(pacMan + 1))) {
     removeFood()
     special()
@@ -114,9 +110,9 @@ right.addEventListener('click', () => {
     pacMan += 1
     cells[pacMan].classList.add('pacmanRight')
   }
-})
+}
 
-up.addEventListener('click', () => {
+function upEvent() {
   if (!(pacMan < width) && !(walls.includes(pacMan - 17))) {
     removeFood()
     special()
@@ -124,9 +120,9 @@ up.addEventListener('click', () => {
     pacMan -= width
     cells[pacMan].classList.add('pacmanUp')
   }
-})
+}
 
-down.addEventListener('click', () => {
+function downEvent() {
   if (!(pacMan + width >= width ** 2) && !(walls.includes(pacMan + 17))) {
     removeFood()
     special()
@@ -134,9 +130,9 @@ down.addEventListener('click', () => {
     pacMan += width
     cells[pacMan].classList.add('pacmanDown')
   }
-})
+}
 
-left.addEventListener('click', () => {
+function leftEvent() {
   if (!(pacMan % width === 0) && !(walls.includes(pacMan - 1))) {
     removeFood()
     special()
@@ -144,7 +140,12 @@ left.addEventListener('click', () => {
     pacMan -= 1
     cells[pacMan].classList.add('pacmanLeft')
   }
-})
+}
+
+right.addEventListener('click', rightEvent)
+up.addEventListener('click', upEvent)
+down.addEventListener('click', downEvent)
+left.addEventListener('click', leftEvent)
 
 function removeRecurrence() {
   cells[pacMan].classList.remove('pacmanRight')
@@ -158,9 +159,7 @@ function removeFood() {
   if (cells[pacMan].classList.contains('food')) {
     cells[pacMan].classList.remove('food')
     score = score + 10
-    highScore = highScore + 10
     points.innerHTML = score
-    high.innerHTML = highScore
     checkForWinner()
   }
 }
@@ -170,14 +169,8 @@ function special() {
   if (cells[pacMan].classList.contains('coin')) {
     cells[pacMan].classList.remove('coin')
     score = score + 100
-    highScore = highScore + 100
     points.innerHTML = score
-    high.innerHTML = highScore
   }
-}
-
-if (localStorage) {
-  localStorage.setItem('highscore', high)
 }
 
 // Random movement of ghosts
@@ -223,7 +216,11 @@ function moveGhost(ghost, color) {
     if (cells[ghost].classList.contains('pacmanRight') || cells[ghost].classList.contains('pacmanLeft') || cells[ghost].classList.contains('pacmanUp') || cells[ghost].classList.contains('pacmanDown')) {
       lose.innerHTML = `Game Over! You scored ${points.innerHTML} points`
       clearIntervals()
-      removeRecurrence()
+      document.removeEventListener('keydown', moveEvent)
+      right.removeEventListener('click', rightEvent)
+      up.removeEventListener('click', upEvent)
+      down.removeEventListener('click', downEvent)
+      left.removeEventListener('click', leftEvent)
     }
   }, 250)
 }
@@ -241,7 +238,7 @@ function clearIntervals() {
 }
 
 function checkForWinner() {
-  if (score >= 1630) {
+  if (score >= 100) {
     clearIntervals()
     removeRecurrence()
 
@@ -262,6 +259,12 @@ function checkForWinner() {
         }
       }
     }
+
+    document.removeEventListener('keydown', moveEvent)
+    right.removeEventListener('click', rightEvent)
+    up.removeEventListener('click', upEvent)
+    down.removeEventListener('click', downEvent)
+    left.removeEventListener('click', leftEvent)
 
     setTimeout(() => {
       location.reload()
