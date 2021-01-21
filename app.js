@@ -11,10 +11,10 @@ const width = 17 // ! DO NOT TOUCH
 const cells = []
 
 let pacMan = 194
-let ghost1 = 125
-let ghost2 = 128
-let ghost3 = 160
-let ghost4 = 162
+const ghost1 = 125
+const ghost2 = 128
+const ghost3 = 160
+const ghost4 = 162
 let score = 0
 
 // Create grid
@@ -224,9 +224,9 @@ function moveGhost(ghost, color) {
 }
 
 moveGhost(ghost1, 'ghost-1')
-//moveGhost(ghost2, 'ghost-2')
-//moveGhost(ghost3, 'ghost-3')
-//moveGhost(ghost4, 'ghost-4')
+moveGhost(ghost2, 'ghost-2')
+moveGhost(ghost3, 'ghost-3')
+moveGhost(ghost4, 'ghost-4')
 
 function clearIntervals() {
   clearInterval(1)
@@ -236,14 +236,17 @@ function clearIntervals() {
 }
 
 function checkForWinner() {
-  if (score >= 100) {
+  if (score >= 1630) {
     clearIntervals()
     removeRecurrence()
     pacMan = ''
-    
-    //const g1 = document.querySelector('.ghost-1')
-    //console.log(g1)
-    //g1.removeProperty('background-image')
+
+    cells.forEach((element) => {
+      element.classList.remove('ghost-1')
+      element.classList.remove('ghost-2')
+      element.classList.remove('ghost-3')
+      element.classList.remove('ghost-4')
+    })
 
     for (let i = 0; i < walls.length; i++) {
       for (let j = 0; j < cells.length; j++) {
