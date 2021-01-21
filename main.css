@@ -231,20 +231,24 @@ h3 {
     height: 30px;
     margin-bottom: 4px;
     margin-left: 165px;
+    touch-action: manipulation;
   }
 
   .down {
     width: 30px;
     height: 30px;
+    touch-action: manipulation;
   }
 
   .left {
     width: 30px;
     height: 30px;
+    touch-action: manipulation;
   }
 
   .right {
     width: 30px;
     height: 30px;
+    touch-action: manipulation;
   }
 }
