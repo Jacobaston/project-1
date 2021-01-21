@@ -174,24 +174,28 @@ h3 {
   width: 30px;
   height: 30px;
   -webkit-appearance: none;
+  background-color: rgba(242, 241, 239, 1);
 }
 
 .down {
   width: 30px;
   height: 30px;
   -webkit-appearance: none;
+  background-color: rgba(242, 241, 239, 1);
 }
 
 .left {
   width: 30px;
   height: 30px;
   -webkit-appearance: none;
+  background-color: rgba(242, 241, 239, 1);
 }
 
 .right {
   width: 30px;
   height: 30px;
   -webkit-appearance: none;
+  background-color: rgba(242, 241, 239, 1);
 }
 
 @media screen and (max-width: 414px) {
