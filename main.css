@@ -173,21 +173,25 @@ h3 {
   margin-left: 184px;
   width: 30px;
   height: 30px;
+  -webkit-appearance: none;
 }
 
 .down {
   width: 30px;
   height: 30px;
+  -webkit-appearance: none;
 }
 
 .left {
   width: 30px;
   height: 30px;
+  -webkit-appearance: none;
 }
 
 .right {
   width: 30px;
   height: 30px;
+  -webkit-appearance: none;
 }
 
 @media screen and (max-width: 414px) {
@@ -232,20 +236,5 @@ h3 {
     height: 30px;
     margin-bottom: 4px;
     margin-left: 165px;
-  }
-
-  .down {
-    width: 30px;
-    height: 30px;
-  }
-
-  .left {
-    width: 30px;
-    height: 30px;
-  }
-
-  .right {
-    width: 30px;
-    height: 30px;
   }
 }
