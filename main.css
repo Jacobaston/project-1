@@ -164,6 +164,29 @@ h3 {
   color: white;
   border: none;
   font-family: 'VT323';
+  margin-right: 100px;
+  margin-bottom: 50px;
+}
+
+.up {
+  margin-left: 184px;
+  width: 30px;
+  height: 30px;
+}
+
+.down {
+  width: 30px;
+  height: 30px;
+}
+
+.left {
+  width: 30px;
+  height: 30px;
+}
+
+.right {
+  width: 30px;
+  height: 30px;
 }
 
 @media screen and (max-width: 414px) {
@@ -207,6 +230,7 @@ h3 {
     width: 30px;
     height: 30px;
     margin-bottom: 4px;
+    margin-left: 165px;
   }
 
   .down {
