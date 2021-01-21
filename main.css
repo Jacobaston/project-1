@@ -101,15 +101,15 @@ h3 {
 
 @keyframes flash {
   0%   {background-color: #2121DE;}
-  10%   {background-color: rgb(14, 216, 14);}
-  20%   {background-color: #2121DE;}
-  30%   {background-color: rgb(14, 216, 14);}
+  10%  {background-color: rgb(14, 216, 14);}
+  20%  {background-color: #2121DE;}
+  30%  {background-color: rgb(14, 216, 14);}
   40%  {background-color: #2121DE;}
   50%  {background-color: rgb(14, 216, 14);}
-  60% {background-color: #2121DE;}
-  70%   {background-color: rgb(14, 216, 14);}
-  80%   {background-color: #2121DE;}
-  90%   {background-color: rgb(14, 216, 14);}
+  60%  {background-color: #2121DE;}
+  70%  {background-color: rgb(14, 216, 14);}
+  80%  {background-color: #2121DE;}
+  90%  {background-color: rgb(14, 216, 14);}
   100% {background-color: #2121DE;}
   
 }
@@ -196,6 +196,35 @@ h3 {
   height: 30px;
   -webkit-appearance: none;
   background-color: rgba(242, 241, 239, 1);
+}
+
+@media screen and (max-height: 1600px) {
+  .grid {
+    width: 400px;
+    height: 400px;
+  }
+
+  header {
+    width: 400px;
+  }
+
+  img {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 350px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  h3 {
+    font-size: 14px;
+  }
+
+  aside {
+    margin-left: 23.52px;
+  }
 }
 
 @media screen and (max-width: 414px) {
