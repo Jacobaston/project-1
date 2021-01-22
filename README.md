@@ -80,7 +80,7 @@ for (let i = 0; i < cells.length; i++) {
   }
 }
  ```
-## Event listenered
+## Event listeners
 
 In order to move pacman around the board event listeners were used. The decision was made to opt for keycodes in order to improve accessibility and the use of international keyboards.
 
@@ -184,3 +184,19 @@ function moveGhost(ghost, color) {
  ```
  
 ## Challenges
+
+- This was my first front-end JavaScript project and assembling all of my knowledge on arrays, control flow, functions and intervals and applying them to an entirely blank canvas for the first time was without doubt the biggest challenge faced. In places, the code is lengthy and a little unwieldy, but I have deliberately left much of it like this as way of referencing my ability and understanding at the time of creation (the project was set with a one-week timeframe).
+
+- Moving the ghosts in a semi intelligent way was the single biggest technical challenge. It took me a little while to understand how to correctly get the ghosts coordinates and to then compare these to the coordinates of pacman.
+
+## Potential future features
+
+- If I were to create this game again from the begining I would look to incorporate a Breadth-First-Search algorithm in order to make the ghosts move in a more intelligent way. This would make the game run much more smoothly and challenging for the user
+
+- Make the ghosts edible for a set period of time once the special coins have been eaten. This isn't to much of a stretch goal and could quite easily be incorporated within the code I already have
+
+- Adding new levels with increased difficulty once a player completes a maze. This could either come in the form of increased ghost speed or more challenging mazes
+
+## Lessons learned
+
+- Design mobile first. I only added the mobile styling to the game once it was complete on a desktop. Now that over 55% of web traffic is now done on a mobile device this would make future projects much faster to plan and complete
