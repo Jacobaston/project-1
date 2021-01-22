@@ -80,6 +80,48 @@ for (let i = 0; i < cells.length; i++) {
   }
 }
  ```
+## Event listenered
+
+In order to move pacman around the board event listeners were used. The decision was made to opt for keycodes in order to improve accessibility and the use of international keyboards.
+
+Within the event listeners boundry conditions have been added to prevent pacman from being able to pass through any of the maze walls.
+
+Futher event listens were also added to the 'W' 'A' 'S' 'D' buttons on the page in order to make the game mobile friendly.
+
+```js
+function moveEvent(event) {
+  const key = event.keyCode
+
+  if ((key === 68 || key === 39) && !((pacMan + 1) % width === 0) && !(walls.includes(pacMan + 1))) {
+    removeFood()
+    special()
+    removeRecurrence()
+    pacMan += 1
+    cells[pacMan].classList.add('pacmanRight')
+  } else if ((key === 65 || key === 37) && !(pacMan % width === 0) && !(walls.includes(pacMan - 1))) {
+    removeFood()
+    special()
+    removeRecurrence()
+    pacMan -= 1
+    cells[pacMan].classList.add('pacmanLeft')
+  } else if ((key === 83 || key === 40) && !(pacMan + width >= width ** 2) && !(walls.includes(pacMan + 17))) {
+    removeFood()
+    special()
+    removeRecurrence()
+    pacMan += width
+    cells[pacMan].classList.add('pacmanDown')
+  } else if ((key === 87 || key === 38) && !(pacMan < width) && !(walls.includes(pacMan - 17))) {
+    removeFood()
+    special()
+    removeRecurrence()
+    pacMan -= width
+    cells[pacMan].classList.add('pacmanUp')
+  }
+}
+
+document.addEventListener('keydown', moveEvent)
+ ```
+ 
 ## Ghost movement
 
 - A single function is used to determine each ghost's movement. As in the original game, ghosts will look to move closer to pacman as they chase him around the board. 
