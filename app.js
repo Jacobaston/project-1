@@ -66,6 +66,7 @@ cells[pacMan].classList.add('pacmanRight')
 
 //////////-Above this line is just for grid-genoration////////////
 
+// Desktop event listeners
 function moveEvent(event) {
   const key = event.keyCode
 
@@ -96,7 +97,6 @@ function moveEvent(event) {
   }
 }
 
-// Desktop event listeners
 document.addEventListener('keydown', moveEvent)
 
 // Mobile event listeners
