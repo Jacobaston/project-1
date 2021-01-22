@@ -32,6 +32,8 @@ You can play the game [here](https://jacobaston.github.io/project-1/)
 
 ## The Approach
 
+<img src="./images/screenshot-home.png" width="400" />
+
 ### The Grid
 
 The game is built using a grid. A 17 x 17 square is created using JavaScript. HTML divs are created using a for loop and appended as children of the grid, then stored in an array called 'cells'.
@@ -200,3 +202,5 @@ function moveGhost(ghost, color) {
 ## Lessons learned
 
 - Design mobile first. I only added the mobile styling to the game once it was complete on a desktop. Now that over 55% of web traffic is now done on a mobile device this would make future projects much faster to plan and complete
+
+- Plan better. I have a habit of wanting to get stuck stright into the code before having a detailed plan laid out. For future projects I intend to have a comprehensive plan in place that includes pseudo code before I diving in.
