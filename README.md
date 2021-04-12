@@ -32,7 +32,7 @@ You can play the game [here](https://jacobaston.github.io/project-1/)
 
 ## The Approach
 
-![Final project](photos/screenshot-home.jpg)
+![Final project](photos/screenshot-home.png)
 
 ### The Grid
 
